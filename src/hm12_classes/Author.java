@@ -18,6 +18,7 @@ public class Author {
     }
 
     // чтобы автора преобразовать в строку
+    @Override
     public String toString() {
         return firstName + " " + surname;
     }

@@ -29,5 +29,12 @@ public class Main {
         System.out.println("harryPotter.getAuthorName() = " + harryPotter.getAuthorName());
         System.out.println("harryPotter.getPublishedYear() = " + harryPotter.getPublishedYear());
 
+        System.out.println();
+
+        // создаем нового автора и новую книгу
+        Author newAuthor = new Author("Джоан", "Роулинг");
+        Book newBook = new Book("Гарри Поттер", rowling, 1997);
+
+        System.out.println(harryPotter.equals(newBook));
     }
 }
