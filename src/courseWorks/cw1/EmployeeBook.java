@@ -65,14 +65,19 @@ public class EmployeeBook {
         System.out.println(employees[ind]);
     }
 
+    //5. Подсчитать среднее значение зарплат
+    // из-за того, что не разобралась, как сделать возвращаемое значение в п.2, не получается посчитать среднее
+//    public void printAvgSalaryForMonth() {
+//        int avgSalary;
+//        avgSalary =
+//    }
 
-
-//4. Найти сотрудника с максимальной зарплатой.
-//5. Подсчитать среднее значение зарплат (можно использовать для этого метод из пункта b).
-//6. Получить Ф. И. О. всех сотрудников (вывести в консоль)
+    // 6. Получить Ф. И. О. всех сотрудников (вывести в консоль)
+    public void printEmployeesFIO() {
+        for (int i = 0; i < counter; i++) {
+            Employee employee = employees[i];
+            System.out.println(employee.getFirstName() + ' ' + employee.getMiddleName() + ' ' +
+                    employee.getLastName());
+        }
+    }
 }
-
-//2. Посчитать сумму затрат на зарплаты.        checkSalary
-//3. Найти сотрудника с минимальной заплатой.   findMinSalaryOfEmployee
-//4. Найти сотрудника с максимальной зарплатой. findMaxSalaryOfEmployee
-//5. Подсчитать среднее значение зарплат.       countAvgSalary

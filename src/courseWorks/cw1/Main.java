@@ -4,11 +4,11 @@ public class Main {
         public static void printSeparator() {
             System.out.println();
             System.out.println("=========================");
-
         }
         public static void main(String[] args) {
         //Employee[] employee = new Employee[10]; // создали объект для хранения всех сотрудников
         EmployeeBook employeeBook = new EmployeeBook();
+
         employeeBook.addEmployee("Иван", "Ивановач", "Иванов", 1, 83_000);
         employeeBook.addEmployee("Александр", "Васильевич", "Гудов", 2, 70_000);
         employeeBook.addEmployee("Григорий", "Николаевич", "Петров", 1, 90_000);
@@ -37,7 +37,10 @@ public class Main {
         employeeBook.printMaxSalaryEmployee();
         printSeparator();
 
-    }
+        System.out.println("Список ФИО всех сотрудников:");
+        System.out.println();
+        employeeBook.printEmployeesFIO();
+        }
 
 
 
@@ -53,16 +56,6 @@ public class Main {
 //    public static void printEmployeeList(Employee emp) {
 //        System.out.println(emp);
 //    }
-
-
-
-
-// (вывести в консоль значения всех полей (toString)).
-//2. Посчитать сумму затрат на зарплаты в месяц.
-//3. Найти сотрудника с минимальной зарплатой.
-//4. Найти сотрудника с максимальной зарплатой.
-//5. Подсчитать среднее значение зарплат (можно использовать для этого метод из пункта b).
-//6. Получить Ф. И. О. всех сотрудников (вывести в консоль)
 
 
 }
