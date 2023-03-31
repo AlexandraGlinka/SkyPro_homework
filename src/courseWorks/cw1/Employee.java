@@ -8,7 +8,8 @@ public class Employee {
     private String lastName; //  фамилия
     private int department;
     private int salary;
-    public static int id; // счетчик сотрудников
+    public int id; // id сотрудника
+    private static int countEmployee;// счетчик сотрудников
 
     public Employee(String firstName, String middleName, String lastName, int department, int salary) {
         this.firstName = firstName;
@@ -16,7 +17,8 @@ public class Employee {
         this.lastName = lastName;
         this.department = department;
         this.salary = salary;
-        id++; // при добавлении сотрудника - +1
+        countEmployee++;
+        id = countEmployee;
     }
 
     public String getFirstName() {
@@ -63,7 +65,8 @@ public class Employee {
     @Override
     public String toString() {
         return "Employee{" +
-                "firstName='" + firstName + '\'' +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
                 ", middleName='" + middleName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", department=" + department +
