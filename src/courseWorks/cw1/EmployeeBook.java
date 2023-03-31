@@ -151,7 +151,7 @@ public class EmployeeBook {
         for (int i = 0; i < counter; i++) {
             Employee employee = employees[i];
             if (employee.getSalary() < lessThanSalary) {
-                System.out.println(employee.getFirstName() + ' ' + employee.getMiddleName() + ' ' +
+                System.out.println(employee.id + ": " + employee.getFirstName() + ' ' + employee.getMiddleName() + ' ' +
                         employee.getLastName() + " - " + employee.getSalary());
             }
         }
@@ -161,8 +161,8 @@ public class EmployeeBook {
     public void getEmployeesSalaryMoreThan(int moreThanSalary) {
         for (int i = 0; i < counter; i++) {
             Employee employee = employees[i];
-            if (employee.getSalary() > moreThanSalary) {
-                System.out.println(employee.getFirstName() + ' ' + employee.getMiddleName() + ' ' +
+            if (employee.getSalary() >= moreThanSalary) {
+                System.out.println(employee.id + ": " + employee.getFirstName() + ' ' + employee.getMiddleName() + ' ' +
                         employee.getLastName() + " - " + employee.getSalary());
             }
         }

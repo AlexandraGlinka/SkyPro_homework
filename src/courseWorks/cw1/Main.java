@@ -72,7 +72,7 @@ public class Main {
                 printSeparator();
                 System.out.print("Введине зарплату: ");
                 int moreThanSalary = sc.nextInt();
-                System.out.println("Сотрудники с зарплатой больше " + moreThanSalary + " руб.:");
+                System.out.println("Сотрудники с зарплатой больше (или равно) " + moreThanSalary + " руб.:");
                 employeeBook.getEmployeesSalaryMoreThan(moreThanSalary);
         }
 
