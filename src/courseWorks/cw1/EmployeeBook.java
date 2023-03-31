@@ -26,43 +26,43 @@ public class EmployeeBook {
         }
     }
 
-    //2. Посчитать сумму затрат на зарплаты в месяц. printSalaryForMonth
-    // ХОТЕЛА ВОЗВРАТИТЬ ЗНАЧЕНИЕ, А НЕ ПЕЧАТАТЬ
-    // НЕ ПОНИМАЮ, ЧТО НАДО ПЕРЕДАТЬ В ПАРАМЕТР, ЧТОБЫ ВСЕ СЧИТАЛОСЬ КОРРЕКТНО????
-    // значение salary находится в массиве класса Employee
-    public void printSalaryForMonth() {
+    //2. Посчитать сумму затрат на зарплаты в месяц. getSalaryForMonth
+    public int getSalaryForMonth() {
         int totalSalary = 0;
         for (int i = 0; i < counter; i++) {
             Employee employee = employees[i];
             totalSalary += employee.getSalary();
         }
-        System.out.println(totalSalary);
+        //System.out.println(totalSalary);
+        return totalSalary;
     }
 
     //3. Найти сотрудника с минимальной зарплатой. checkSalary
-    public void printMinSalaryEmployee() {
+    public Employee getMinSalaryEmployee() {
         int minSalary = employees[0].getSalary();
         int ind = 0;
         for (int i = 1; i < counter; i++) {
-            if (employees[i].getSalary() < minSalary) {
-                minSalary = employees[i].getSalary();
+            Employee employee = employees[i];
+            if (employee.getSalary() < minSalary) {
+                minSalary = employee.getSalary();
                 ind = i;
             }
         }
-        System.out.println(employees[ind]);
+        return employees[ind];
     }
 
     //4. Найти сотрудника с максимальной зарплатой
-    public void printMaxSalaryEmployee() {
+    public Employee getMaxSalaryEmployee() {
         int maxSalary = employees[0].getSalary();
         int ind = 0;
         for (int i = 1; i < counter; i++) {
-            if (employees[i].getSalary() > maxSalary) {
-                maxSalary = employees[i].getSalary();
+            Employee employee = employees[i];
+            if (employee.getSalary() > maxSalary) {
+                maxSalary = employee.getSalary();
                 ind = i;
             }
         }
-        System.out.println(employees[ind]);
+        return employees[ind];
     }
 
     //5. Подсчитать среднее значение зарплат

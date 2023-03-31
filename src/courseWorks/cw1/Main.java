@@ -13,7 +13,7 @@ public class Main {
         employeeBook.addEmployee("Александр", "Васильевич", "Гудов", 2, 70_000);
         employeeBook.addEmployee("Григорий", "Николаевич", "Петров", 1, 90_000);
         employeeBook.addEmployee("Анна", "Сергеевна", "Волкова", 4, 65_000);
-        employeeBook.addEmployee("Екатерина", "Андреевна", "Сазонова", 3, 58_000);
+        employeeBook.addEmployee("Екатерина", "Андреевна", "Сазонова", 3, 200_000);
         employeeBook.addEmployee("Сергей", "Витальевич", "Буров", 5, 114_000);
 
         printSeparator();
@@ -24,23 +24,30 @@ public class Main {
 
         System.out.println("Посчитать сумму затрат на зарплаты в месяц:");
         System.out.println();
-        employeeBook.printSalaryForMonth();
+        int totalSalary = employeeBook.getSalaryForMonth();
+        System.out.println(totalSalary);
         printSeparator();
 
         System.out.println("Сотрудник с минимальной зарплатой:");
         System.out.println();
-        employeeBook.printMinSalaryEmployee();
+        Employee minSalaryEmployee = employeeBook.getMinSalaryEmployee();
+        System.out.println(minSalaryEmployee);
         printSeparator();
 
         System.out.println("Сотрудник с максимальной зарплатой:");
         System.out.println();
-        employeeBook.printMaxSalaryEmployee();
+        Employee maxSalaryEmployee = employeeBook.getMaxSalaryEmployee();
+        System.out.println(maxSalaryEmployee);
         printSeparator();
 
         System.out.println("Список ФИО всех сотрудников:");
         System.out.println();
         employeeBook.printEmployeesFIO();
+
+
         }
+
+
 
 
 
