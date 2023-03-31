@@ -25,7 +25,7 @@ public class Main {
         System.out.println("Посчитать сумму затрат на зарплаты в месяц:");
         System.out.println();
         int totalSalary = employeeBook.getSalaryForMonth();
-        System.out.println(totalSalary);
+        System.out.println(totalSalary + " руб.");
         printSeparator();
 
         System.out.println("Сотрудник с минимальной зарплатой:");
@@ -38,6 +38,12 @@ public class Main {
         System.out.println();
         Employee maxSalaryEmployee = employeeBook.getMaxSalaryEmployee();
         System.out.println(maxSalaryEmployee);
+        printSeparator();
+
+        System.out.println("Сотрудник с максимальной зарплатой:");
+        System.out.println();
+        int avgSalary = employeeBook.getAvgSalaryForMonth();
+        System.out.println(avgSalary + " руб.");
         printSeparator();
 
         System.out.println("Список ФИО всех сотрудников:");

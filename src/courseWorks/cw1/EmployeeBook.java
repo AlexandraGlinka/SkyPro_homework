@@ -66,11 +66,11 @@ public class EmployeeBook {
     }
 
     //5. Подсчитать среднее значение зарплат
-    // из-за того, что не разобралась, как сделать возвращаемое значение в п.2, не получается посчитать среднее
-//    public void printAvgSalaryForMonth() {
-//        int avgSalary;
-//        avgSalary =
-//    }
+    public int getAvgSalaryForMonth() {
+        int avgSalary;
+        avgSalary = getSalaryForMonth() / counter;
+        return avgSalary;
+    }
 
     // 6. Получить Ф. И. О. всех сотрудников (вывести в консоль)
     public void printEmployeesFIO() {
