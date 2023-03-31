@@ -63,6 +63,17 @@ public class Main {
                 int department = sc.nextInt();
                 employeeBook.getMinSalaryEmployeeInDepart(department);
 
+                printSeparator();
+                System.out.print("Введине зарплату: ");
+                int lessThanSalary = sc.nextInt();
+                System.out.println("Сотрудники с зарплатой меньше " + lessThanSalary + " руб.:");
+                employeeBook.getEmployeesSalaryLessThan(lessThanSalary);
+
+                printSeparator();
+                System.out.print("Введине зарплату: ");
+                int moreThanSalary = sc.nextInt();
+                System.out.println("Сотрудники с зарплатой больше " + moreThanSalary + " руб.:");
+                employeeBook.getEmployeesSalaryMoreThan(moreThanSalary);
         }
 
 

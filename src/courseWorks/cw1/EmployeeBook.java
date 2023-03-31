@@ -145,4 +145,27 @@ public class EmployeeBook {
 //            5. Проиндексировать зарплату всех сотрудников отдела на процент, который приходит в качестве параметра.
 //    6. Напечатать всех сотрудников отдела (все данные, кроме отдела).
 
+    //    3. Получить в качестве параметра число и найти:
+//            1. Всех сотрудников с зарплатой меньше числа (вывести id, Ф. И. О. и зарплатой вконсоль).
+    public void getEmployeesSalaryLessThan(int lessThanSalary) {
+        for (int i = 0; i < counter; i++) {
+            Employee employee = employees[i];
+            if (employee.getSalary() < lessThanSalary) {
+                System.out.println(employee.getFirstName() + ' ' + employee.getMiddleName() + ' ' +
+                        employee.getLastName() + " - " + employee.getSalary());
+            }
+        }
+    }
+//            2. Всех сотрудников с зарплатой больше (или равно) числа (вывести id, Ф. И. О. изарплатой в консоль).
+
+    public void getEmployeesSalaryMoreThan(int moreThanSalary) {
+        for (int i = 0; i < counter; i++) {
+            Employee employee = employees[i];
+            if (employee.getSalary() > moreThanSalary) {
+                System.out.println(employee.getFirstName() + ' ' + employee.getMiddleName() + ' ' +
+                        employee.getLastName() + " - " + employee.getSalary());
+            }
+        }
+    }
+
 }
