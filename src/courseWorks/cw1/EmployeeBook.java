@@ -6,8 +6,8 @@ public class EmployeeBook {
     private final Employee[] employees;
     public int counter;
 
-    public EmployeeBook() {
-        this.employees = new Employee[10]; // создали массив с 10 ячейками памяти
+    public EmployeeBook(int size) {
+        this.employees = new Employee[size]; // создали массив с 10 ячейками памяти
     }
 
     public void addEmployee(String firstName, String middleName, String lastName, int department, int salary) {

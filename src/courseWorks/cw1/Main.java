@@ -9,7 +9,7 @@ public class Main {
         }
         public static void main(String[] args) {
         //Employee[] employee = new Employee[10]; // создали объект для хранения всех сотрудников
-                EmployeeBook employeeBook = new EmployeeBook();
+                EmployeeBook employeeBook = new EmployeeBook(10);
 
                 employeeBook.addEmployee("Иван", "Ивановач", "Иванов", 1, 83_000);
                 employeeBook.addEmployee("Александр", "Васильевич", "Гудов", 2, 70_000);
