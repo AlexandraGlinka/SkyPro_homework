@@ -13,6 +13,8 @@ public class EmployeeBook {
     public void addEmployee(String firstName, String middleName, String lastName, int department, int salary) {
         if (counter >= employees.length) {
             System.out.println("Книга сотрудников заполнена");
+        } else if (department > 5 || department < 1) {
+            throw new IllegalArgumentException("Такого отдела не существует");
         } else {
             Employee newEmployee = new Employee(firstName, middleName, lastName, department, salary);
             //counter++;
@@ -102,7 +104,7 @@ public class EmployeeBook {
         int index = 0;
         for (int i = 0; i < counter; i++) {
             Employee employee = employees[i];
-            if (employee.getDepartment() == department && employee.getSalary() < minSalary) {
+            if ((employee.getDepartment() == department) && (employee.getSalary() < minSalary)) {
                 minSalary = employee.getSalary();
                 index = i;
             }
@@ -112,10 +114,69 @@ public class EmployeeBook {
 
 
 //            2. Сотрудника с максимальной зарплатой.
+    public void getMaxSalaryEmployeeInDepartment(int department) {
+        int maxSalary = Integer.MIN_VALUE;
+        int index = 0;
+        for (int i = 0; i < counter; i++) {
+            Employee employee = employees[i];
+            if (employee.getDepartment() == department && employee.getSalary() > maxSalary) {
+                maxSalary = employee.getSalary();
+                index = i;
+            }
+        }
+        System.out.println(employees[index]);
+    }
+
 //            3. Сумму затрат на зарплату по отделу.
+    public int getTotalSalaryInDepartment(int department) {
+        int totalSalary = 0;
+        for (int i = 0; i < counter; i++) {
+            Employee employee = employees[i];
+            if (employee.getDepartment() == department) {
+                totalSalary = employee.getSalary();
+            }
+        }
+        return totalSalary;
+    }
+
 //            4. Среднюю зарплату по отделу (учесть, что количество людей в отделе отличается от employees.length).
+    public int getAvgSalaryInDepartment(int department) {
+        int avgSalary = 0;
+        int count = 0;
+        for (int i = 0; i < counter; i++) {
+            Employee employee = employees[i];
+            if (employee.getDepartment() == department) {
+                count++;
+            }
+        }
+        avgSalary = getTotalSalaryInDepartment(department) / count;
+        return avgSalary;
+    }
+
 //            5. Проиндексировать зарплату всех сотрудников отдела на процент, который приходит в качестве параметра.
+    public void printIndexSalaryInDepartment(int indexForDepartment, int department) {
+        int newSalary;
+        float ind = 1 + indexForDepartment / 100f;
+        for (int i = 0; i < counter; i++) {
+            Employee employee = employees[i];
+            if (employee.getDepartment() == department) {
+                newSalary = (int) (employee.getSalary() * ind);
+                employee.setSalary(newSalary);
+                System.out.println(employee);
+            }
+        }
+    }
+
 //    6. Напечатать всех сотрудников отдела (все данные, кроме отдела).
+    public void printEmployeessInDepartment(int department) {
+        for (int i = 0; i < counter; i++) {
+            Employee employee = employees[i];
+            if (employee.getDepartment() == department) {
+                System.out.println(employee.getFirstName() + ' ' + employee.getMiddleName() + ' ' +
+                        employee.getLastName() + ": " + employee.getSalary());
+            }
+        }
+    }
 
     //    3. Получить в качестве параметра число и найти:
 //            1. Всех сотрудников с зарплатой меньше числа (вывести id, Ф. И. О. и зарплатой вконсоль).

@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class Main {
         public static void printSeparator() {
-            System.out.println("=======================================");
+                System.out.println();
+                System.out.println("=======================================");
         }
         public static void main(String[] args) {
         //Employee[] employee = new Employee[10]; // создали объект для хранения всех сотрудников
@@ -54,11 +55,39 @@ public class Main {
                 printSeparator();
                 System.out.print("Введите номер отдела (от 1 до 5): ");
                 int department = sc.nextInt();
+                System.out.println();
                 System.out.println("Сотрудники с наименьшей з/п в отделе " + department + ":");
                 employeeBook.getMinSalaryEmployeeInDepartment(department);
 
+                System.out.println();
+
+                System.out.println("Сотрудники с наибольшей з/п в отделе " + department + ":");
+                employeeBook.getMaxSalaryEmployeeInDepartment(department);
+
+                System.out.println();
+
+                System.out.println("Сумма затрат на зарплату по отделу " + department + ":");
+                int sum = employeeBook.getTotalSalaryInDepartment(department);
+                System.out.println(sum + " руб.");
+
+                System.out.println();
+
+                System.out.println("Средняя зарплата по отделу " + department + ":");
+                int avgSalaryInDept = employeeBook.getAvgSalaryInDepartment(department);
+                System.out.println(avgSalaryInDept + " руб.");
+
+                System.out.println();
+
+                System.out.print("Введите уровень индексации по отделу " + department + ", %: ");
+                int index2 = sc.nextInt();
+                employeeBook.printIndexSalaryInDepartment(index2, department);
+
+                System.out.println();
+                System.out.println("Список сотрудников из отдела " + department + ':');
+                employeeBook.printEmployeessInDepartment(department);
+
                 printSeparator();
-                System.out.print("Введине зарплату: ");
+                System.out.print("Введите зарплату: ");
                 int lessThanSalary = sc.nextInt();
                 System.out.println("Сотрудники с зарплатой меньше " + lessThanSalary + " руб.:");
                 employeeBook.getEmployeesSalaryLessThan(lessThanSalary);
@@ -68,6 +97,10 @@ public class Main {
                 int moreThanSalary = sc.nextInt();
                 System.out.println("Сотрудники с зарплатой больше (или равно) " + moreThanSalary + " руб.:");
                 employeeBook.getEmployeesSalaryMoreThan(moreThanSalary);
+
+                System.out.println();
+                printSeparator();
+                System.out.println("КОНЕЦ!");
         }
 
 
