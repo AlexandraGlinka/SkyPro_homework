@@ -4,8 +4,7 @@ import java.util.Scanner;
 
 public class Main {
         public static void printSeparator() {
-            System.out.println();
-            System.out.println("=========================");
+            System.out.println("=======================================");
         }
         public static void main(String[] args) {
         //Employee[] employee = new Employee[10]; // создали объект для хранения всех сотрудников
@@ -20,36 +19,30 @@ public class Main {
 
                 printSeparator();
                 System.out.println("Список всех сотрудников со всеми имеющимися по ним данными:");
-                System.out.println();
                 employeeBook.printEmployeeList();
                 printSeparator();
 
                 System.out.println("Посчитать сумму затрат на зарплаты в месяц:");
-                System.out.println();
                 int totalSalary = employeeBook.getSalaryForMonth();
                 System.out.println(totalSalary + " руб.");
                 printSeparator();
 
                 System.out.println("Сотрудник с минимальной зарплатой:");
-                System.out.println();
                 Employee minSalaryEmployee = employeeBook.getMinSalaryEmployee();
                 System.out.println(minSalaryEmployee);
                 printSeparator();
 
                 System.out.println("Сотрудник с максимальной зарплатой:");
-                System.out.println();
                 Employee maxSalaryEmployee = employeeBook.getMaxSalaryEmployee();
                 System.out.println(maxSalaryEmployee);
                 printSeparator();
 
                 System.out.println("Сотрудник с максимальной зарплатой:");
-                System.out.println();
                 int avgSalary = employeeBook.getAvgSalaryForMonth();
                 System.out.println(avgSalary + " руб.");
                 printSeparator();
 
                 System.out.println("Список ФИО всех сотрудников:");
-                System.out.println();
                 employeeBook.printEmployeesFIO();
 
                 printSeparator();
@@ -61,7 +54,8 @@ public class Main {
                 printSeparator();
                 System.out.print("Введите номер отдела (от 1 до 5): ");
                 int department = sc.nextInt();
-                employeeBook.getMinSalaryEmployeeInDepart(department);
+                System.out.println("Сотрудники с наименьшей з/п в отделе " + department + ":");
+                employeeBook.getMinSalaryEmployeeInDepartment(department);
 
                 printSeparator();
                 System.out.print("Введине зарплату: ");

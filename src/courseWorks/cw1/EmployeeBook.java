@@ -97,47 +97,19 @@ public class EmployeeBook {
 
     //    2. Получить в качестве параметра номер отдела (1–5) и найти (всего 6 методов):
 //            1. Сотрудника с минимальной зарплатой.
-    public Employee getMinSalaryEmployeeInDepart(int department) {
-        int dep = department;
-        Employee[] employeesFromDepartment = new Employee[counter];
+    public void getMinSalaryEmployeeInDepartment(int department) {
+        int minSalary = Integer.MAX_VALUE;
         int index = 0;
-        if (dep > 5 || dep < 0) {
-            throw new RuntimeException("Такого отдела в компании не существует");
-        }
         for (int i = 0; i < counter; i++) {
             Employee employee = employees[i];
-            boolean trueDepartment = employee.getDepartment() == dep;
-            if (true) {
-                employeesFromDepartment[index] = employees[i]; // если нужный отдел, то добавляем значение в новый массив
-            } else {
-                employeesFromDepartment[index] = null; // иначе добавляем null в массив
-            }
-            index++;
-        }
-        int minSalaryEmployeeFromDepartment = getMaxSalaryEmployee().getSalary(); // в минимальную зп кладем самую большую зп
-        for (int i = 0; i < counter; i++) {
-            Employee employee = employees[i];
-            if (employeesFromDepartment[i].equals(employees[i])) { // если ячейки совпадают (а это должны быть все, где не null
-                if (employee.getSalary() < minSalaryEmployeeFromDepartment) { // то сравниваем текущий минимум с новой зп
-                    minSalaryEmployeeFromDepartment = employee.getSalary(); // кладем сюда новую зп
-                    index = i;
-                }
+            if (employee.getDepartment() == department && employee.getSalary() < minSalary) {
+                minSalary = employee.getSalary();
+                index = i;
             }
         }
-        return employees[index];
+        System.out.println(employees[index]);
     }
 
-//        index = neededIndexes[0];
-//        int minSalary = employees[index].getSalary();
-//        for (int i = 0; i < neededIndexes.length; i++) {
-//            Employee employee = employees[i];
-//            if (employees[i].getSalary() < minSalary) {
-//                minSalary = employee.getSalary();
-//                index = i;
-//            }
-//        }
-//        return employees[index];
-//    }
 
 //            2. Сотрудника с максимальной зарплатой.
 //            3. Сумму затрат на зарплату по отделу.
@@ -169,3 +141,47 @@ public class EmployeeBook {
     }
 
 }
+
+
+//    public Employee getMinSalaryEmployeeInDepart(int department) {
+//        int dep = department;
+//        Employee[] employeesFromDepartment = new Employee[counter];
+//        int index = 0;
+//        if (dep > 5 || dep < 0) {
+//            throw new RuntimeException("Такого отдела в компании не существует");
+//        }
+//        for (int i = 0; i < counter; i++) {
+//            Employee employee = employees[i];
+//            boolean trueDepartment = employee.getDepartment() == dep;
+//            if (true) {
+//                employeesFromDepartment[index] = employees[i]; // если нужный отдел, то добавляем значение в новый массив
+//            } else {
+//                employeesFromDepartment[index] = null; // иначе добавляем null в массив
+//            }
+//            index++;
+//        }
+//        int minSalaryEmployeeFromDepartment = getMaxSalaryEmployee().getSalary(); // в минимальную зп кладем самую большую зп
+//        for (int i = 0; i < counter; i++) {
+//            Employee employee = employees[i];
+//            if (employeesFromDepartment[i].equals(employees[i])) { // если ячейки совпадают (а это должны быть все, где не null
+//                if (employee.getSalary() < minSalaryEmployeeFromDepartment) { // то сравниваем текущий минимум с новой зп
+//                    minSalaryEmployeeFromDepartment = employee.getSalary(); // кладем сюда новую зп
+//                    index = i;
+//                }
+//            }
+//        }
+//        return employees[index];
+//    }
+
+
+//        index = neededIndexes[0];
+//        int minSalary = employees[index].getSalary();
+//        for (int i = 0; i < neededIndexes.length; i++) {
+//            Employee employee = employees[i];
+//            if (employees[i].getSalary() < minSalary) {
+//                minSalary = employee.getSalary();
+//                index = i;
+//            }
+//        }
+//        return employees[index];
+//    }
