@@ -4,6 +4,8 @@ public class GeneralQualities {
     private String name;
     private int magic; // владение магией
     private int transgression; // способность трансгрессировать
+   // public int id; // id студента
+   // protected static int countStudents; // счетчик студентов
 
     public GeneralQualities(String name, int magic, int transgression) {
         this.name = name;
