@@ -1,6 +1,6 @@
 package hm14_oop;
 
-public class Gryffindor extends GeneralQualities{
+public class Gryffindor extends HogwartsStudents {
     private int nobility; // благородство
     private int honor; // честь
     private int bravery; // храбрость

@@ -1,11 +1,13 @@
 package hm14_oop;
 
-public class Hogwarts {
+import java.util.Scanner;
+
+public class Main {
     public static void main(String[] args) {
         Gryffindor[] gryffindors = {
-                new Gryffindor("Гарри Поттер", 75, 50, 80, 100, 100),
-                new Gryffindor("Гермиона Грейнджер", 95, 100, 90, 85, 90),
-                new Gryffindor("Рон Уизли", 40, 30, 80, 70, 60)
+                new Gryffindor("Гарри Поттер", 90, 80, 90, 90, 95),
+                new Gryffindor("Гермиона Грейнджер", 85, 100, 90, 85, 90),
+                new Gryffindor("Рон Уизли", 40, 30, 80, 70, 75)
         };
 
         Hufflepuff[] hufflepuffs = {
@@ -28,13 +30,27 @@ public class Hogwarts {
         };
 
         PrintService printService = new PrintService();
-        printService.print(gryffindors);
-        System.out.println();
         printService.print(hufflepuffs);
         System.out.println();
-        printService.print(ravenclaws);
+
+        System.out.println("Сравнение студентов с одного факультета");
+        CompareService compareService = new CompareService();
+        compareService.compareGryffindorStrudents(gryffindors[0], gryffindors[1]);
+        compareService.compareHufflepuffStrudents(hufflepuffs[0], hufflepuffs[1]);
+        compareService.compareRavenclawStrudents(ravenclaws[0], ravenclaws[1]);
+        compareService.compareSlytherinStrudents(slytherins[0], slytherins[1]);
+
         System.out.println();
-        printService.print(slytherins);
+
+        System.out.println("Сравнение студентов с разных факультетов");
+        compareService.compareAnyStrudents(gryffindors[0], slytherins[0]);
+//        printService.print(gryffindors);
+//        System.out.println();
+//        printService.print(hufflepuffs);
+//        System.out.println();
+//        printService.print(ravenclaws);
+//        System.out.println();
+//        printService.print(slytherins);
     }
 }
 /*

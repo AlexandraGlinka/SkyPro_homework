@@ -1,6 +1,6 @@
 package hm14_oop;
 
-public class Ravenclaw extends GeneralQualities{
+public class Ravenclaw extends HogwartsStudents {
     private int intellect; // ум
     private int wisdom; // мудрость
     private int wittiness; // остроумие

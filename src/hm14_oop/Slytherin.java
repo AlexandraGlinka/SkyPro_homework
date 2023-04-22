@@ -1,6 +1,6 @@
 package hm14_oop;
 
-public class Slytherin extends GeneralQualities{
+public class Slytherin extends HogwartsStudents {
     private int cunning; // хитрость
     private int determination; // решительность
     private int resourcefulness; // находчивость

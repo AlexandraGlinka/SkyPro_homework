@@ -1,6 +1,6 @@
 package hm14_oop;
 
-public class Hufflepuff extends GeneralQualities{
+public class Hufflepuff extends HogwartsStudents {
     private int industriousness; // трудолюбие
     private int loyalty; // верность
     private int honesty; // честность
