@@ -6,4 +6,8 @@ public class Bicycle extends Vehicle {
         super(modelName, wheelsCount);
     }
 
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }

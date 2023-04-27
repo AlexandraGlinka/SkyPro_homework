@@ -1,26 +1,34 @@
 package hm15_oop2;
 
 public class ServiceStation implements CheckVehicle{
-    public void check(Car car, Bicycle bicycle, Truck truck) {
-        if (car != null) {
-            System.out.println("Обслуживаем " + car.modelName);
-            for (int i = 0; i < car.wheelsCount; i++) {
-                updateTyre();
-            }
-            checkEngine();
-        } else if (truck != null) {
-            System.out.println("Обслуживаем " + truck.modelName);
-            for (int i = 0; i < truck.wheelsCount; i++) {
-                updateTyre();
-            }
-            checkEngine();
-            checkTrailer();
-        } else if (bicycle != null) {
-            System.out.println("Обслуживаем " + bicycle.modelName);
-            for (int i = 0; i < bicycle.wheelsCount; i++) {
-                updateTyre();
-            }
+    @Override
+    public void check(Bicycle bicycle) {
+        bicycle.toString();
+        System.out.println("Обслуживаем " + bicycle.modelName);
+        System.out.println("Информация о ТС: " + bicycle.toString());
+        for (int i = 0; i < bicycle.getWheelsCount(); i++) {
+            updateTyre();
         }
+    }
+    @Override
+    public void check(Car car) {
+        car.toString();
+        System.out.println("Обслуживаем " + car.modelName);
+        System.out.println("Информация о ТС: " + car.toString());
+        for (int i = 0; i < car.getWheelsCount(); i++) {
+            updateTyre();
+        }
+        checkEngine();
+    }
+    @Override
+    public void check(Truck truck) {
+        System.out.println("Обслуживаем " + truck.modelName);
+        System.out.println("Информация о ТС: " + truck.toString());
+        for (int i = 0; i < truck.getWheelsCount(); i++) {
+            updateTyre();
+        }
+        checkEngine();
+        checkTrailer();
     }
 
     private static void updateTyre() {
