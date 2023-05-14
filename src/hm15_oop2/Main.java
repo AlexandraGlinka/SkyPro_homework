@@ -34,6 +34,5 @@ public class Main {
         station.check(bicycles[0]);
         System.out.println();
         station.check(trucks[0]);
-
     }
 }
