@@ -11,17 +11,17 @@ import java.util.regex.Pattern;
 public class Main {
     public static void authorizationInfoCheck(String login, String password, String confirmPassword)
             throws WrongLoginException, BadPasswordException, BadConfirmPasswordException {
-        Pattern pattern = Pattern.compile("\\W"); //  любой символ кроме латиницы, цифр или нижнего подчёркивания;
-        Matcher matcherLogin = pattern.matcher(login);
-        Matcher matcherPassword = pattern.matcher(password);
-        if ((login.length() > 20) || matcherLogin.matches()) { // login.matches("\\W")
+        //Pattern pattern = Pattern.compile("[a-zA-Z0-9_]+"); //  любой символ кроме латиницы, цифр или нижнего подчёркивания;
+        //Matcher matcherLogin = pattern.matcher(login);
+        //Matcher matcherPassword = pattern.matcher(password);
+        if ((login.length() > 20) || !login.matches("[a-zA-Z0-9_]+")) { // login.matches("\\W")
             throw new WrongLoginException();
         }
-        if ((password.length() > 20) || matcherPassword.matches()) {
+        if ((password.length() > 20) || !password.matches("[a-zA-Z0-9_]+")) {
             throw new BadPasswordException();
         }
         if (confirmPassword != password) {
-            throw new BadPasswordException();
+            throw new BadConfirmPasswordException();
         }
 
     }
